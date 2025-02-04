@@ -45,11 +45,26 @@ export default function PetCard({data}) {
                 </div>
                 <p className = "text-3xl">{data.name}</p>
                 <p>My Age: {data.age}</p>
-                {data.breeds.mixed ? <p>I am a {data.breeds.primary} / {data.breeds.secondary}</p> : <p>I am a {data.breeds.primary}</p>}
+
+                {data.breeds.mixed && data.breeds.secondary !== null ? <p>I am a {data.breeds.primary} / {data.breeds.secondary}</p> : <p>I am a {data.breeds.primary}</p>}
+
                 {data.photos.length === 0 && <p>{data.description}</p>}
+
                 <p>{data.status}</p>
-                <p>{data.coat}</p>
-                <a href={data.url} target="_blank">Link</a>
+                
+                
+
+
+                <div className="border-y-1">
+                    <h2>Want to meet me?!</h2>
+                    {data.contact.address.city && <p>City: {data.contact.address.city}</p>}
+                    {data.contact.address.state && <p>State: {data.contact.address.state}</p>}
+                    {data.contact.address.postcode && <p>Postcode: {data.contact.address.postcode}</p>}
+
+                </div>
+
+                <a href={data.url} target="_blank" className="underline underline-offset-2 text-blue-800">Find Out More</a>
+
             </div>
             
 
