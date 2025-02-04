@@ -6,11 +6,15 @@ import GetSighthounds from './utilities/petfinder-Api'
 import NextButton from './components/NextPrevButtons'
 import Hero from './components/Hero'
 import Header from './components/Header'
+import Filters from './components/Filters'
 function App() {
 
   const [searchData, setSearchData] = useState(null)
   const [pagination, setPagination] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [filters, setFilters] = useState({})
+
+  console.log(filters)
 
   const handleSearch = async () => {
     console.log("handleSearch")
@@ -35,6 +39,7 @@ function App() {
       <Header />
       <Hero />
       {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
+      <Filters onFilterChange={setFilters} />
       <SearchPets onSearch={handleSearch} />
       {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
       {!loading && searchData && <PetList data={searchData} />}
