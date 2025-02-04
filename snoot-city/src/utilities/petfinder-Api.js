@@ -1,6 +1,6 @@
 import GetAuthToken from "./GetAuthToken";
 
-async function GetSighthounds() { // Default location = UK
+async function GetSighthounds(filters) {
     const token = await GetAuthToken()
 
     const sighthoundBreeds = [
@@ -15,8 +15,13 @@ async function GetSighthounds() { // Default location = UK
         "Sloughi",
     ];
 
-    const response = await fetch(
-        `https://api.petfinder.com/v2/animals?type=dog&breed=${sighthoundBreeds.join(",")}`,
+    let base_url = `https://api.petfinder.com/v2/animals?type=dog&breed=${sighthoundBreeds.join(",")}`
+
+    if(filters.gender !== "any") {
+        base_url = base_url + `&gender=${filters.gender}`
+    }
+
+    const response = await fetch(base_url,
         {
             method: "GET",
             headers: {

@@ -7,6 +7,8 @@ import NextButton from './components/NextPrevButtons'
 import Hero from './components/Hero'
 import Header from './components/Header'
 import Filters from './components/Filters'
+
+
 function App() {
 
   const [searchData, setSearchData] = useState(null)
@@ -19,7 +21,7 @@ function App() {
   const handleSearch = async () => {
     console.log("handleSearch")
     setLoading(true)
-    const data = await GetSighthounds()
+    const data = await GetSighthounds(filters)
     console.log(data.animals)
     setSearchData(data.animals)
     setPagination(data)
