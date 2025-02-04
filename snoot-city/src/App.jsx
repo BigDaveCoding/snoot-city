@@ -4,6 +4,8 @@ import PetList from './components/PetList'
 import SearchPets from './components/SearchPets'
 import GetSighthounds from './utilities/petfinder-Api'
 import NextButton from './components/NextPrevButtons'
+import Hero from './components/Hero'
+import Header from './components/Header'
 function App() {
 
   const [searchData, setSearchData] = useState(null)
@@ -30,6 +32,8 @@ function App() {
 
   return (
     <>
+      <Header />
+      <Hero />
       {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
       <SearchPets onSearch={handleSearch} />
       {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
