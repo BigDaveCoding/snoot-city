@@ -2,7 +2,7 @@
 
 export default function PetCard({data}) {
 
-    console.log(data)
+    // console.log(data)
 
     return (
         <>
