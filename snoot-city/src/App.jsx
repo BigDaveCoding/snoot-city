@@ -20,7 +20,7 @@ function App() {
     setLoading(false)
   }
 
-  const handleNextPage = (data) => {
+  const handleNextPrevPage = (data) => {
     console.log(data)
     setLoading(true)
     setSearchData(data.animals)
@@ -32,7 +32,7 @@ function App() {
     <>
       {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
       <SearchPets onSearch={handleSearch} />
-      {!loading && pagination && <NextButton data={pagination} onNext={handleNextPage} loading={setLoading} /> }
+      {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
       {!loading && searchData && <PetList data={searchData} />}
       {loading && <p className="text-center">Loading Snoots!</p>}
       
