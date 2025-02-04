@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import PetList from './components/PetList'
 import SearchPets from './components/SearchPets'
@@ -10,28 +8,33 @@ function App() {
 
   const [searchData, setSearchData] = useState(null)
   const [pagination, setPagination] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const handleSearch = async () => {
     console.log("handleSearch")
+    setLoading(true)
     const data = await GetSighthounds()
     console.log(data.animals)
     setSearchData(data.animals)
     setPagination(data)
-    
+    setLoading(false)
   }
 
   const handleNextPage = (data) => {
     console.log(data)
+    setLoading(true)
     setSearchData(data.animals)
     setPagination(data)
+    setLoading(false)
   }
 
   return (
     <>
       {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
       <SearchPets onSearch={handleSearch} />
-      {searchData && <PetList data={searchData} />}
-      {pagination && <NextButton data={pagination} onNext={handleNextPage} /> }
+      {!loading && pagination && <NextButton data={pagination} onNext={handleNextPage} loading={setLoading} /> }
+      {!loading && searchData && <PetList data={searchData} />}
+      {loading && <p className="text-center">Loading Snoots!</p>}
       
     </>
   )
