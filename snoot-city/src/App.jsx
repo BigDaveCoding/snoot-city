@@ -14,7 +14,7 @@ function App() {
   const [searchData, setSearchData] = useState(null)
   const [pagination, setPagination] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [filters, setFilters] = useState({})
+  const [filters, setFilters] = useState({gender: "any", age : "any"})
 
   console.log(filters)
 
