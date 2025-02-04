@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe, faPaw, faArrowRight, faArrowLeft, faBone } from "@fortawesome/free-solid-svg-icons"
 
 export default function PetCard({data}) {
 
@@ -39,18 +41,26 @@ export default function PetCard({data}) {
                         {data.photos[0] ? <img className="object-contain w-full h-full min-h-[400px]" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                     </div>
                     {photo_array.length > 1 && <div>
-                        <button onClick={handleNextPhoto} className="border-1 p-2 mx-2 my-2">next</button>
-                        <button onClick={handlePrevPhoto} className="border-1 p-2 mx-2 my-2">prev</button>
+                        <button onClick={handlePrevPhoto} className="border-1 rounded-[50%] w-12 h-12 mx-6 my-2"><FontAwesomeIcon icon={faArrowLeft} /></button>
+                        <button onClick={handleNextPhoto} className="border-1 rounded-[50%] w-12 h-12 mx-6 my-2"><FontAwesomeIcon icon={faArrowRight} /></button>
                     </div>}
                 </div>
-                <p className = "text-3xl">{data.name}</p>
-                <p>My Age: {data.age}</p>
 
-                {data.breeds.mixed && data.breeds.secondary !== null ? <p>I am a {data.breeds.primary} / {data.breeds.secondary}</p> : <p>I am a {data.breeds.primary}</p>}
+
+                <p className = "text-3xl py-2">{data.name} <FontAwesomeIcon icon={faPaw} /> </p>
+
+                {data.breeds.mixed && data.breeds.secondary !== null ? 
+                <p className="pb-2">I am a {data.breeds.primary} / {data.breeds.secondary} <FontAwesomeIcon icon={faBone} /></p> 
+                : <p className="pb-2">I am a {data.breeds.primary} <FontAwesomeIcon icon={faBone} /></p>
+                }
+
+
+                {/* <p>My Age: {data.age}</p> */}
+
 
                 {data.photos.length === 0 && <p>{data.description}</p>}
 
-                <p>{data.status}</p>
+                {/* <p>{data.status}</p> */}
                 
                 
 
@@ -63,7 +73,12 @@ export default function PetCard({data}) {
 
                 </div>
 
-                <a href={data.url} target="_blank" className="underline underline-offset-2 text-blue-800">Find Out More</a>
+                <div className="flex py-2">
+                    <a href={data.url} target="_blank" className="underline underline-offset-2 text-blue-800">
+                        Find Out More 
+                        <FontAwesomeIcon icon={faGlobe} className="text-2xl pl-3 hover:text-blue-400 hover:scale-110 transition-all duration-75" />
+                    </a>
+                </div>
 
             </div>
             
