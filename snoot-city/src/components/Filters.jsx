@@ -32,40 +32,54 @@ export default function Filters({onFilterChange}) {
     return (
         <>
             <button className="border-2 p-2">Filters</button>
-            <div className="p-2">
-                <label> Gender:
-                    <select className="border-1 p-2 rounded" name="gender" value={filters.gender} onChange={handleFilterChange} >
-                        <option value="any" defaultValue>Any</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </label>
 
-                <label> Age:
-                    <select className="border-1 p-2 rounded" name="age" value={filters.age} onChange={handleFilterChange} >
-                        <option value="any" defaultValue>Any</option>
-                        <option value="baby">Baby</option>
-                        <option value="young">Young</option>
-                        <option value="adult">Adult</option>
-                        <option value="senior">Senior</option>
-                    </select>
-                </label>
+            <div className="flex flex-col p-2 gap-4">
 
-                <label>House Trained:
-                    <input type="checkbox" name="house_trained" onChange={handleCheckbox} />
-                </label>
+                <div className="grid grid-cols-2">
 
-                <label>Good With Dogs:
-                    <input type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
-                </label>
+                    <div>
+                        <label className="mr-2" htmlFor="gender"> Gender:</label>
+                        <select className="border-1 p-2 rounded" name="gender" value={filters.gender} onChange={handleFilterChange} >
+                            <option value="any" defaultValue>Any</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    
 
-                <label>Good With Cats:
-                    <input type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
-                </label>
+                    <div>
+                        <label className="mr-2" htmlFor="age"> Age: </label>
+                        <select className="border-1 p-2 rounded" name="age" value={filters.age} onChange={handleFilterChange} >
+                            <option value="any" defaultValue>Any</option>
+                            <option value="baby">Baby</option>
+                            <option value="young">Young</option>
+                            <option value="adult">Adult</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </div>
+                    
 
-                <label>Good With Children:
-                    <input type="checkbox" name="good_with_children" onChange={handleCheckbox} />
-                </label>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4">
+
+                    <label>House Trained:
+                        <input type="checkbox" name="house_trained" onChange={handleCheckbox} />
+                    </label>
+
+                    <label>Good With Dogs:
+                        <input type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
+                    </label>
+
+                    <label>Good With Cats:
+                        <input type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
+                    </label>
+
+                    <label>Good With Children:
+                        <input type="checkbox" name="good_with_children" onChange={handleCheckbox} />
+                    </label>
+
+                </div>
 
             </div>
         </>
