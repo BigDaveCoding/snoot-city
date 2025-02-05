@@ -13,6 +13,7 @@ export default function Filters({onFilterChange}) {
     });
 
     // console.log(filters)
+    
 
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
@@ -31,7 +32,7 @@ export default function Filters({onFilterChange}) {
     
     return (
         <>
-            <button className="border-2 p-2">Filters</button>
+            {/* <button className="border-2 p-2">Filters</button> */}
 
             <div className="flex flex-col p-2 gap-4 bg-gray-100">
 
