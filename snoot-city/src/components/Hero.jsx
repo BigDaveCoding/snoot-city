@@ -6,7 +6,7 @@ export default function Hero(){
     return (
         <>
             <div className="flex justify-center items-center">
-                <img src="../../public/images/snoot_city.png" alt="" />
+                <img src="../../images/snoot_city.png" alt="" />
             </div>
             <div>
                 <h2 className="text-center p-2 text-2xl">Find your new best friend here at Snoot City!</h2>
