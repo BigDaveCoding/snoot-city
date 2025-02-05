@@ -26,6 +26,15 @@ async function GetSighthounds(filters) {
     if (filters.house_trained !== false) {
         base_url = base_url + `&house_trained=${filters.house_trained}`
     }
+    if (filters.good_with_dogs !== false) {
+        base_url = base_url + `&good_with_dogs=${filters.good_with_dogs}`
+    }
+    if (filters.good_with_cats !== false) {
+        base_url = base_url + `&good_with_cats=${filters.good_with_cats}`
+    }
+    if (filters.good_with_children !== false) {
+        base_url = base_url + `&good_with_children=${filters.good_with_children}`
+    }
 
     const response = await fetch(base_url,
         {

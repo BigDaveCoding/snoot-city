@@ -3,7 +3,14 @@ import { useState } from "react"
 
 export default function Filters({onFilterChange}) {
 
-    const [filters, setFilters] = useState({ gender: "any", age: "any", house_trained : false });
+    const [filters, setFilters] = useState({ 
+        gender: "any",
+        age: "any",
+        house_trained : false,
+        good_with_dogs : false,
+        good_with_cats : false,
+        good_with_children : false 
+    });
 
     // console.log(filters)
 
@@ -46,6 +53,18 @@ export default function Filters({onFilterChange}) {
 
                 <label>House Trained:
                     <input type="checkbox" name="house_trained" onChange={handleCheckbox} />
+                </label>
+
+                <label>Good With Dogs:
+                    <input type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
+                </label>
+
+                <label>Good With Cats:
+                    <input type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
+                </label>
+
+                <label>Good With Children:
+                    <input type="checkbox" name="good_with_children" onChange={handleCheckbox} />
                 </label>
 
             </div>
