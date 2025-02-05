@@ -10,7 +10,9 @@ export default function SearchPets({onSearch}) {
     return (
         <>
             {/* <input onClick={handleSearch} type="submit" value="search" className="border-2 p-2" /> */}
-            <button onClick={handleSearch} className="border-1 p-2 ml-2 rounded">Search Snoots!</button>
+            <div className="flex justify-center items-center">
+                <button onClick={handleSearch} className="border-2 bg-logo-font-color font-medium text-xl p-2 ml-2 rounded w-8/12 ">Search Snoots!</button>
+            </div>
         </>
     ) 
 
