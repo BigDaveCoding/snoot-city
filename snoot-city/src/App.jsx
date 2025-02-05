@@ -63,9 +63,9 @@ function App() {
       
       <div>
         {!showFilters ? 
-          <button className="border-1 p-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
+          <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
           :
-          <button className="border-1 p-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
+          <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
         }
       </div>
 
