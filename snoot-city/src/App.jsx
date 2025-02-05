@@ -57,29 +57,25 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
-      <Hero />
-      
-      <div>
-        {!showFilters ? 
-          <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
-          :
-          <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
-        }
+      <div className="bg-background-primary font-baloo">
+        <Hero />
+        
+        <div>
+          {!showFilters ?
+            <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
+            :
+            <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
+          }
+        </div>
+        {showFilters && <Filters onFilterChange={setFilters} />}
+        <SearchPets onSearch={handleSearch} />
+        {!loading && pagination && <PaginationInfo data={pagination}/>}
+        {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
+        {!loading && searchData && <PetList data={searchData} />}
+        {loading && <p className="text-center">Loading Snoots!</p>}
       </div>
-
-      {showFilters && <Filters onFilterChange={setFilters} />}
-
-      <SearchPets onSearch={handleSearch} />
-
-      {!loading && pagination && <PaginationInfo data={pagination}/>}
-
-      {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
-
-      {!loading && searchData && <PetList data={searchData} />}
-
-      {loading && <p className="text-center">Loading Snoots!</p>}
       
     </>
   )
