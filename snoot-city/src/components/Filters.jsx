@@ -5,6 +5,8 @@ export default function Filters({onFilterChange}) {
 
     const [filters, setFilters] = useState({ gender: "any", age: "any", house_trained : false });
 
+    // console.log(filters)
+
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
         const newFilters = { ...filters, [name]: value }; // Merge filters
@@ -12,6 +14,13 @@ export default function Filters({onFilterChange}) {
         onFilterChange(newFilters); // Send the updated filters
     };
 
+    const handleCheckbox = (e) => {
+        const name = e.target.name
+        const boolean = e.target.checked
+        const newFilters = {...filters, [name] : boolean };
+        setFilters(newFilters)
+        onFilterChange(newFilters)
+    }
     
     return (
         <>
@@ -33,6 +42,10 @@ export default function Filters({onFilterChange}) {
                         <option value="adult">Adult</option>
                         <option value="senior">Senior</option>
                     </select>
+                </label>
+
+                <label>House Trained:
+                    <input type="checkbox" name="house_trained" onChange={handleCheckbox} />
                 </label>
 
             </div>

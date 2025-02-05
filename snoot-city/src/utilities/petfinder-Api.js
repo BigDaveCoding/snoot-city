@@ -23,6 +23,9 @@ async function GetSighthounds(filters) {
     if (filters.age!== "any") {
         base_url = base_url + `&age=${filters.age}`
     }
+    if (filters.house_trained !== false) {
+        base_url = base_url + `&house_trained=${filters.house_trained}`
+    }
 
     const response = await fetch(base_url,
         {
