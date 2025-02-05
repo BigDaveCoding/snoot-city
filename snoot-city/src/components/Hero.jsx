@@ -5,15 +5,18 @@ export default function Hero(){
 
     return (
         <>
+            
             <div className="flex justify-center items-center">
-                <img src="../../images/snoot_city.png" alt="" />
+                <img className="" src="../../images/oh_my_snoot_logo.png" alt="" />
             </div>
+
             <div>
-                <h2 className="text-center p-2 text-2xl">Find your new best friend here at Snoot City!</h2>
-                <p className=" px-6 pb-2">Here at Snoot City, we are passionate about giving sighthounds the love, care, and second chances they deserve.
-                     These graceful, loyal companions may be fast on their feet, but they’re even faster at stealing hearts!
-                      Whether they’re retired racers or simply in need of a fresh start, we’re dedicated to helping every sighthound find a warm, loving forever home
-                       Join us in making a difference—because every long nose deserves a lifetime of love!</p>
+                <h2 className="text-center p-2 text-4xl">FIND YOUR NEW BEST FRIEND</h2>
+
+                <img className="p-2" src="../../images/snoot_banner_frames.png" alt='' />
+
+                <p className="px-6 py-4 text-2xl">Here at <strong className="text-logo-font-color">Oh My Snoot</strong>, we are passionate about giving sighthounds the love, care, and second chances they deserve.
+                     </p>
             </div>
         </>
     )
