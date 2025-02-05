@@ -14,7 +14,15 @@ function App() {
   const [searchData, setSearchData] = useState(null)
   const [pagination, setPagination] = useState(null)
   const [loading, setLoading] = useState(false)
-  const [filters, setFilters] = useState({gender: "any", age : "any"})
+  
+  const [filters, setFilters] = useState({ 
+    gender: "any",
+    age: "any",
+    house_trained : false,
+    good_with_dogs : false,
+    good_with_cats : false,
+    good_with_children : false 
+});
 
   console.log(filters)
 
