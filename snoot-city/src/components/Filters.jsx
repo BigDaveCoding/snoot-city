@@ -33,23 +33,22 @@ export default function Filters({onFilterChange}) {
         <>
             <button className="border-2 p-2">Filters</button>
 
-            <div className="flex flex-col p-2 gap-4">
+            <div className="flex flex-col p-2 gap-4 bg-gray-100">
 
                 <div className="grid grid-cols-2">
 
-                    <div>
+                    <div className="flex flex-row justify-evenly items-center">
                         <label className="mr-2" htmlFor="gender"> Gender:</label>
-                        <select className="border-1 p-2 rounded" name="gender" value={filters.gender} onChange={handleFilterChange} >
+                        <select className="border-1 p-2 rounded flex-grow max-w-[50%]" name="gender" value={filters.gender} onChange={handleFilterChange} >
                             <option value="any" defaultValue>Any</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
                     </div>
                     
-
-                    <div>
+                    <div className="flex flex-row justify-evenly items-center">
                         <label className="mr-2" htmlFor="age"> Age: </label>
-                        <select className="border-1 p-2 rounded" name="age" value={filters.age} onChange={handleFilterChange} >
+                        <select className="border-1 p-2 rounded flex-grow max-w-[50%]" name="age" value={filters.age} onChange={handleFilterChange} >
                             <option value="any" defaultValue>Any</option>
                             <option value="baby">Baby</option>
                             <option value="young">Young</option>
@@ -58,26 +57,29 @@ export default function Filters({onFilterChange}) {
                         </select>
                     </div>
                     
-
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-                    <label>House Trained:
-                        <input type="checkbox" name="house_trained" onChange={handleCheckbox} />
-                    </label>
+                    <label htmlFor="house_trained">House Trained:</label>
+                    <div className="flex justify-center">
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="house_trained" onChange={handleCheckbox} />
+                    </div>
 
-                    <label>Good With Dogs:
-                        <input type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
-                    </label>
+                    <label htmlFor="good_with_dogs">Good With Dogs:</label>
+                    <div className="flex justify-center">
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
+                    </div>
 
-                    <label>Good With Cats:
-                        <input type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
-                    </label>
+                    <label htmlFor="good_with_cats">Good With Cats:</label>
+                    <div className="flex justify-center">
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
+                    </div>
 
-                    <label>Good With Children:
-                        <input type="checkbox" name="good_with_children" onChange={handleCheckbox} />
-                    </label>
+                    <label htmlFor="good_with_children">Good With Children:</label>
+                    <div className="flex justify-center">
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_children" onChange={handleCheckbox} />
+                    </div>
 
                 </div>
 
