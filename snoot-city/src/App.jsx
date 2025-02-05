@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
 import PetList from './components/PetList'
 import SearchPets from './components/SearchPets'
@@ -8,6 +10,7 @@ import Hero from './components/Hero'
 import Header from './components/Header'
 import Filters from './components/Filters'
 import PaginationInfo from './components/PaginationInfo'
+
 
 
 function App() {
@@ -23,9 +26,11 @@ function App() {
     good_with_dogs : false,
     good_with_cats : false,
     good_with_children : false 
-});
+  });
 
-  console.log(filters)
+  const [showFilters, setShowFilters] = useState(false)
+
+  // console.log(filters)
 
   const handleSearch = async () => {
     console.log("handleSearch")
@@ -45,16 +50,35 @@ function App() {
     setLoading(false)
   }
 
+  const handleShowFilters = () => {
+    // console.log("handleShowFilters")
+    setShowFilters(!showFilters)
+  }
+
   return (
     <>
       <Header />
+
       <Hero />
-      {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
-      <Filters onFilterChange={setFilters} />
+      
+      <div>
+        {!showFilters ? 
+          <button className="border-1 p-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
+          :
+          <button className="border-1 p-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
+        }
+      </div>
+
+      {showFilters && <Filters onFilterChange={setFilters} />}
+
       <SearchPets onSearch={handleSearch} />
+
       {!loading && pagination && <PaginationInfo data={pagination}/>}
+
       {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
+
       {!loading && searchData && <PetList data={searchData} />}
+
       {loading && <p className="text-center">Loading Snoots!</p>}
       
     </>
