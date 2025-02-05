@@ -14,7 +14,6 @@ export default function Filters({onFilterChange}) {
 
     // console.log(filters)
     
-
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
         const newFilters = { ...filters, [name]: value }; // Merge filters
