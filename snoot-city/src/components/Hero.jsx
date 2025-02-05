@@ -11,7 +11,7 @@ export default function Hero(){
             </div>
 
             <div>
-                <h2 className="text-center p-2 text-4xl">FIND YOUR NEW BEST FRIEND</h2>
+                <h2 className="text-center p-2 text-4xl text-secondary-color font-bold">FIND YOUR NEW BEST FRIEND</h2>
 
                 <img className="p-2" src="../../images/snoot_banner_frames.png" alt='' />
 
