@@ -1,4 +1,6 @@
 import GetAuthToken from "../utilities/GetAuthToken"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 
 export default function NextButton({data, onNext, loading}) {
@@ -53,8 +55,18 @@ export default function NextButton({data, onNext, loading}) {
 
     return (
         <>
-            <button onClick={handleNext} className="border rounded bg-green-800">Next</button>
-            <button onClick={handlePrev} className="border rounded bg-red-950">previous page</button>
+            <div className="grid grid-cols-2 py-2">
+                <button onClick={handlePrev} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 ">
+                    <FontAwesomeIcon icon={faArrowLeft} className="pr-2" />
+                    Previous
+                </button>
+
+                <button onClick={handleNext} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 ">
+                    Next 
+                    <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
+                </button>
+                
+            </div>
         </>
     ) 
 
