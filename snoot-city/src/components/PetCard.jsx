@@ -35,23 +35,27 @@ export default function PetCard({data}) {
     return (
         <>
             
-            <div className="border-1 rounded-lg p-2">
+            <div className="rounded-lg p-4 bg-secondary-color/30 lg:pt-8">
+
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex justify-center items-center max-w-[400px] max-h-[400px] overflow-hidden">
-                        {data.photos[0] ? <img className="object-contain w-full h-full min-h-[400px]" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
+                    
+                    <div className="flex justify-center items-center w-full h-[400px] overflow-hidden">
+                        {data.photos[0] ? <img className="object-cover w-full h-full" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                     </div>
+
                     {photo_array.length > 1 && <div>
-                        <button onClick={handlePrevPhoto} className="border-1 rounded-[50%] w-12 h-12 mx-6 my-2"><FontAwesomeIcon icon={faArrowLeft} /></button>
-                        <button onClick={handleNextPhoto} className="border-1 rounded-[50%] w-12 h-12 mx-6 my-2"><FontAwesomeIcon icon={faArrowRight} /></button>
+                        <button onClick={handlePrevPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 my-2"><FontAwesomeIcon icon={faArrowLeft} /></button>
+                        <button onClick={handleNextPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 my-2"><FontAwesomeIcon icon={faArrowRight} /></button>
                     </div>}
+
                 </div>
 
 
-                <p className = "text-3xl py-2">{data.name} <FontAwesomeIcon icon={faPaw} /> </p>
+                <p className = "text-3xl py-2"><FontAwesomeIcon icon={faPaw} className="text-xl" /> {data.name} </p>
 
                 {data.breeds.mixed && data.breeds.secondary !== null ? 
-                <p className="pb-2">I am a {data.breeds.primary} / {data.breeds.secondary} <FontAwesomeIcon icon={faBone} /></p> 
-                : <p className="pb-2">I am a {data.breeds.primary} <FontAwesomeIcon icon={faBone} /></p>
+                <p className="pb-2">I am a {data.breeds.primary} / {data.breeds.secondary} </p> 
+                : <p className="pb-2">I am a {data.breeds.primary} </p>
                 }
 
 
@@ -65,18 +69,18 @@ export default function PetCard({data}) {
                 
 
 
-                <div className="border-y-1">
+                {/* <div className="border-y-1">
                     <h2>Want to meet me?!</h2>
                     {data.contact.address.city && <p>City: {data.contact.address.city}</p>}
                     {data.contact.address.state && <p>State: {data.contact.address.state}</p>}
                     {data.contact.address.postcode && <p>Postcode: {data.contact.address.postcode}</p>}
 
-                </div>
+                </div> */}
 
-                <div className="flex py-2">
-                    <a href={data.url} target="_blank" className="underline underline-offset-2 text-blue-800">
+                <div className="flex pb-2">
+                    <a href={data.url} target="_blank" className="underline underline-offset-2 text-logo-font-color">
                         Find Out More 
-                        <FontAwesomeIcon icon={faGlobe} className="text-2xl pl-3 hover:text-blue-400 hover:scale-110 transition-all duration-75" />
+                        {/* <FontAwesomeIcon icon={faGlobe} className="text-2xl pl-3 hover:text-blue-400 hover:scale-110 transition-all duration-75" /> */}
                     </a>
                 </div>
 
