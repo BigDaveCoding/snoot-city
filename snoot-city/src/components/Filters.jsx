@@ -3,7 +3,9 @@ import { useState } from "react"
 
 export default function Filters({onFilterChange}) {
 
-    const [filters, setFilters] = useState({ gender: "any", age: "any" });
+    const [filters, setFilters] = useState({ gender: "any", age: "any", house_trained : false });
+
+    const [houseTrained, setHouseTrained] = useState(false)
 
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
@@ -24,13 +26,19 @@ export default function Filters({onFilterChange}) {
                         <option value="female">Female</option>
                     </select>
                 </label>
+
                 <label> Age:
                     <select className="border-1 p-2 rounded" name="age" value={filters.age} onChange={handleFilterChange} >
                         <option value="any" defaultValue>Any</option>
                         <option value="baby">Baby</option>
                         <option value="young">Young</option>
                         <option value="adult">Adult</option>
+                        <option value="senior">Senior</option>
                     </select>
+                </label>
+
+                <label>House Trained: 
+                    <input type="checkbox" name="house_trained" onClick={setHouseTrained(!houseTrained)} />
                 </label>
             </div>
         </>
