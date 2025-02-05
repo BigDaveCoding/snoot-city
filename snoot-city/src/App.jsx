@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import PetList from './components/PetList'
 import SearchPets from './components/SearchPets'
@@ -7,6 +7,7 @@ import NextButton from './components/NextPrevButtons'
 import Hero from './components/Hero'
 import Header from './components/Header'
 import Filters from './components/Filters'
+import PaginationInfo from './components/PaginationInfo'
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
       {/* <p className="text-5xl text-red-500 underline underline-offset-10">testing</p> */}
       <Filters onFilterChange={setFilters} />
       <SearchPets onSearch={handleSearch} />
+      {!loading && pagination && <PaginationInfo data={pagination}/>}
       {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
       {!loading && searchData && <PetList data={searchData} />}
       {loading && <p className="text-center">Loading Snoots!</p>}
