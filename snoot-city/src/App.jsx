@@ -61,16 +61,18 @@ function App() {
 
       <div className="bg-background-primary font-baloo">
         <Hero />
-        
-        <div>
+
+        <SearchPets onSearch={handleSearch} />
+
+        <div className="flex ">
           {!showFilters ?
-            <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
+            <button className="border-2 bg-logo-font-color font-medium text-xl p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
             :
-            <button className="border-1 p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
+            <button className="border-2 bg-logo-font-color font-medium text-xl p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
           }
         </div>
+        
         {showFilters && <Filters onFilterChange={setFilters} />}
-        <SearchPets onSearch={handleSearch} />
         {!loading && pagination && <PaginationInfo data={pagination}/>}
         {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
         {!loading && searchData && <PetList data={searchData} />}
