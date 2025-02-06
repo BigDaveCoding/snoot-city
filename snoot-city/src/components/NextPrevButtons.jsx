@@ -5,7 +5,7 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 export default function NextButton({data, onNext, loading}) {
 
-    console.log(data)
+    // console.log(data)
 
     const handleNext = async (e) => {
         console.log(data.pagination._links.next.href)
