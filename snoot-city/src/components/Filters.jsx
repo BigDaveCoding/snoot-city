@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function Filters({onFilterChange}) {
 
-    const [filters, setFilters] = useState({ 
+    const defaultFilters = {
         gender: "any",
         age: "any",
         house_trained : false,
@@ -12,10 +12,12 @@ export default function Filters({onFilterChange}) {
         good_with_children : false,
         name : "",
         limit : 20
-    });
+    }
 
-    console.log(filters)
-    console.log(typeof(filters.limit))
+    const [filters, setFilters] = useState(defaultFilters);
+
+    // console.log(filters)
+    // console.log(typeof(filters.limit))
     
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
@@ -40,6 +42,15 @@ export default function Filters({onFilterChange}) {
         onFilterChange(newFilters)
 
     }
+
+    const handleResetFilters = () => {
+
+        console.log("resetting filters")
+
+        setFilters(defaultFilters)
+        onFilterChange(filters)
+
+    }
     
     return (
         <>
@@ -49,7 +60,7 @@ export default function Filters({onFilterChange}) {
 
                 <div className="flex items-center">
                     <label className="pr-2" htmlFor="name">Name: </label>
-                    <input onChange={handleFilterChange} className="p-2 border-1 rounded w-full" type="text" name="name" placeholder="Search by name..." />
+                    <input onChange={handleFilterChange} className="p-2 border-1 rounded w-full" type="text" name="name" value={filters.name} placeholder="Search by name..." />
                 </div>
 
                 <div className="grid grid-cols-2">
@@ -80,22 +91,22 @@ export default function Filters({onFilterChange}) {
 
                     <label htmlFor="house_trained">House Trained:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="house_trained" onChange={handleCheckbox} />
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="house_trained" checked={filters.house_trained} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_dogs">Good With Dogs:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_dogs" onChange={handleCheckbox} />
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_dogs" checked={filters.good_with_dogs} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_cats">Good With Cats:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_cats" onChange={handleCheckbox} />
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_cats" checked={filters.good_with_cats} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_children">Good With Children:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_children" onChange={handleCheckbox} />
+                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_children" checked={filters.good_with_children} onChange={handleCheckbox} />
                     </div>
 
                 </div>
@@ -107,6 +118,10 @@ export default function Filters({onFilterChange}) {
                         <option value="50">50</option>
                         {/* <option value="100">100</option> */}
                     </select>
+                </div>
+
+                <div className="flex justify-end">
+                    <button onClick={handleResetFilters} className="border-1 p-2 rounded bg-secondary-color text-background-primary">Reset Filters</button>
                 </div>
 
             </div>
