@@ -1,10 +1,15 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPaw, faArrowRight, faArrowLeft, faBone } from "@fortawesome/free-solid-svg-icons"
+import { Link, useParams } from "react-router-dom";
 
 export default function PetCard({data}) {
 
     // console.log(data)
+
+    // let {id} = useParams()
+
+    const id = data.id
 
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
     // console.log(currentPhoto)
@@ -59,9 +64,10 @@ export default function PetCard({data}) {
                     }
                     {data.photos.length === 0 && <p>{data.description}</p>}
                     <div className="flex pb-2">
-                        <a href={data.url} target="_blank" className="underline underline-offset-2 text-logo-font-color">
+                        {/* <a href={data.url} target="_blank" className="underline underline-offset-2 text-logo-font-color">
                             Find Out More
-                        </a>
+                        </a> */}
+                        <Link to={`/petinfo/${id}`} >Find Out More</Link>
                     </div>
                 </div>
 
