@@ -62,9 +62,10 @@ function App() {
       {/* <Header /> */}
 
       <div className="bg-background-primary font-baloo">
+        
         <Hero />
 
-        <SearchPets onSearch={handleSearch} />
+        <SearchPets onSearch={handleSearch} className="text-background-primary uppercase bg-logo-font-color font-medium text-xl p-2 ml-2 rounded-3xl w-8/12" />
 
         <div className="flex py-4">
           {!showFilters ?
@@ -74,11 +75,16 @@ function App() {
           }
         </div>
 
-        {showFilters && <Filters onFilterChange={setFilters} />}
+        {showFilters && <Filters onFilterChange={setFilters} onSearch={handleSearch} />}
+
         {!loading && pagination && <PaginationInfo data={pagination}/>}
+
         {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
+
         {!loading && searchData && <PetList data={searchData} />}
+
         {loading && <p className="text-center">Loading Snoots!</p>}
+
       </div>
       
     </>
