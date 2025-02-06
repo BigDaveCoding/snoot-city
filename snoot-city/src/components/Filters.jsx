@@ -89,6 +89,14 @@ export default function Filters({onFilterChange}) {
 
                 </div>
 
+                <div>
+                    <select>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                </div>
+
             </div>
         </>
     )
