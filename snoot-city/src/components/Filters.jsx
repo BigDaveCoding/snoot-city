@@ -1,7 +1,8 @@
 import { useState } from "react"
+import SearchPets from "./SearchPets";
 
 
-export default function Filters({onFilterChange}) {
+export default function Filters({onFilterChange, onSearch}) {
 
     const defaultFilters = {
         gender: "any",
@@ -91,22 +92,22 @@ export default function Filters({onFilterChange}) {
 
                     <label htmlFor="house_trained">House Trained:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="house_trained" checked={filters.house_trained} onChange={handleCheckbox} />
+                        <input className="accent-secondary-color cursor-pointer w-6 h-6" type="checkbox" name="house_trained" checked={filters.house_trained} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_dogs">Good With Dogs:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_dogs" checked={filters.good_with_dogs} onChange={handleCheckbox} />
+                        <input className="accent-secondary-color cursor-pointer w-6 h-6" type="checkbox" name="good_with_dogs" checked={filters.good_with_dogs} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_cats">Good With Cats:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_cats" checked={filters.good_with_cats} onChange={handleCheckbox} />
+                        <input className="accent-secondary-color cursor-pointer w-6 h-6" type="checkbox" name="good_with_cats" checked={filters.good_with_cats} onChange={handleCheckbox} />
                     </div>
 
                     <label htmlFor="good_with_children">Good With Children:</label>
                     <div className="flex justify-center">
-                        <input className="accent-green-600 cursor-pointer w-6 h-6" type="checkbox" name="good_with_children" checked={filters.good_with_children} onChange={handleCheckbox} />
+                        <input className="accent-secondary-color cursor-pointer w-6 h-6" type="checkbox" name="good_with_children" checked={filters.good_with_children} onChange={handleCheckbox} />
                     </div>
 
                 </div>
@@ -120,9 +121,13 @@ export default function Filters({onFilterChange}) {
                     </select>
                 </div>
 
-                <div className="flex justify-end">
-                    <button onClick={handleResetFilters} className="border-1 p-2 rounded bg-secondary-color text-background-primary">Reset Filters</button>
+                <div className="grid grid-cols-[2fr_1fr] bg-background-primary">
+                    <SearchPets onSearch={onSearch} className="text-background-primary uppercase bg-logo-font-color p-2 ml-2 rounded-3xl w-8/12" />
+                    <button onClick={handleResetFilters} className="justify-self-end border-1 p-2 rounded-3xl text-sm bg-secondary-color text-background-primary w-10/12">Reset</button>
+                    
                 </div>
+
+                
 
             </div>
         </>
