@@ -35,11 +35,11 @@ export default function PetCard({data}) {
     return (
         <>
             
-            <div className="rounded-lg p-4 bg-secondary-color/30 lg:pt-8">
+            <div className="flex flex-col rounded-lg p-4 bg-secondary-color/30 lg:pt-8 h-full">
 
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center flex-grow">
                     
-                    <div className="flex justify-center items-center w-full h-[400px] overflow-hidden">
+                    <div className="flex justify-center items-center w-full h-[400px] overflow-hidden mb-auto">
                         {data.photos[0] ? <img className="object-cover w-full h-full" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                     </div>
 
@@ -51,37 +51,18 @@ export default function PetCard({data}) {
                 </div>
 
 
-                <p className = "text-3xl py-2"><FontAwesomeIcon icon={faPaw} className="text-xl" /> {data.name} </p>
-
-                {data.breeds.mixed && data.breeds.secondary !== null ? 
-                <p className="pb-2">I am a {data.breeds.primary} / {data.breeds.secondary} </p> 
-                : <p className="pb-2">I am a {data.breeds.primary} </p>
-                }
-
-
-                {/* <p>My Age: {data.age}</p> */}
-
-
-                {data.photos.length === 0 && <p>{data.description}</p>}
-
-                {/* <p>{data.status}</p> */}
-                
-                
-
-
-                {/* <div className="border-y-1">
-                    <h2>Want to meet me?!</h2>
-                    {data.contact.address.city && <p>City: {data.contact.address.city}</p>}
-                    {data.contact.address.state && <p>State: {data.contact.address.state}</p>}
-                    {data.contact.address.postcode && <p>Postcode: {data.contact.address.postcode}</p>}
-
-                </div> */}
-
-                <div className="flex pb-2">
-                    <a href={data.url} target="_blank" className="underline underline-offset-2 text-logo-font-color">
-                        Find Out More 
-                        {/* <FontAwesomeIcon icon={faGlobe} className="text-2xl pl-3 hover:text-blue-400 hover:scale-110 transition-all duration-75" /> */}
-                    </a>
+                <div className="mt-auto">
+                    <p className = "text-3xl py-2"><FontAwesomeIcon icon={faPaw} className="text-xl" /> {data.name} </p>
+                    {data.breeds.mixed && data.breeds.secondary !== null ?
+                    <p className="pb-2">I am a {data.breeds.primary} / {data.breeds.secondary} </p>
+                    : <p className="pb-2">I am a {data.breeds.primary} </p>
+                    }
+                    {data.photos.length === 0 && <p>{data.description}</p>}
+                    <div className="flex pb-2">
+                        <a href={data.url} target="_blank" className="underline underline-offset-2 text-logo-font-color">
+                            Find Out More
+                        </a>
+                    </div>
                 </div>
 
             </div>
