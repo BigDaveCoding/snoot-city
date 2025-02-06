@@ -9,7 +9,8 @@ export default function Filters({onFilterChange}) {
         house_trained : false,
         good_with_dogs : false,
         good_with_cats : false,
-        good_with_children : false 
+        good_with_children : false,
+        name : "" 
     });
 
     // console.log(filters)
@@ -34,6 +35,11 @@ export default function Filters({onFilterChange}) {
             {/* <button className="border-2 p-2">Filters</button> */}
 
             <div className="flex flex-col p-2 gap-4 bg-gray-100">
+
+                <div className="flex items-center">
+                    <label className="pr-2">Name: </label>
+                    <input onChange={handleFilterChange} className="p-2 border-1 rounded w-full" type="text" name="name" placeholder="Search by name..." />
+                </div>
 
                 <div className="grid grid-cols-2">
 

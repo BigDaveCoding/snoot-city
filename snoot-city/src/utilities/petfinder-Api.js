@@ -35,6 +35,9 @@ async function GetSighthounds(filters) {
     if (filters.good_with_children !== false) {
         base_url = base_url + `&good_with_children=${filters.good_with_children}`
     }
+    if (filters.name !== "") {
+        base_url = base_url + `&name=${filters.name}`
+    }
 
     const response = await fetch(base_url,
         {
