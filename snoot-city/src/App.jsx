@@ -25,7 +25,8 @@ function App() {
     house_trained : false,
     good_with_dogs : false,
     good_with_cats : false,
-    good_with_children : false 
+    good_with_children : false,
+    name : "" 
   });
 
   const [showFilters, setShowFilters] = useState(false)
