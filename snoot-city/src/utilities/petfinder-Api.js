@@ -15,7 +15,7 @@ async function GetSighthounds(filters) {
         "Sloughi",
     ];
 
-    let base_url = `https://api.petfinder.com/v2/animals?type=dog&breed=${sighthoundBreeds.join(",")}`
+    let base_url = `https://api.petfinder.com/v2/animals?type=dog&breed=${sighthoundBreeds.join(",")}&limit=${filters.limit}`
 
     if(filters.gender !== "any") {
         base_url = base_url + `&gender=${filters.gender}`

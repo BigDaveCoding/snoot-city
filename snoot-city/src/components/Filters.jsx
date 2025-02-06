@@ -10,10 +10,12 @@ export default function Filters({onFilterChange}) {
         good_with_dogs : false,
         good_with_cats : false,
         good_with_children : false,
-        name : "" 
+        name : "",
+        limit : 20
     });
 
-    // console.log(filters)
+    console.log(filters)
+    console.log(typeof(filters.limit))
     
     const handleFilterChange = (e) => {
         const { name, value } = e.target; // Get name and value from event
@@ -29,6 +31,15 @@ export default function Filters({onFilterChange}) {
         setFilters(newFilters)
         onFilterChange(newFilters)
     }
+
+    const handleIntergerValue = (e) => {
+        const name = e.target.name
+        const value = Number(e.target.value)
+        const newFilters = {...filters, [name] : value}
+        setFilters(newFilters)
+        onFilterChange(newFilters)
+
+    }
     
     return (
         <>
@@ -37,7 +48,7 @@ export default function Filters({onFilterChange}) {
             <div className="flex flex-col p-2 gap-4 bg-gray-100">
 
                 <div className="flex items-center">
-                    <label className="pr-2">Name: </label>
+                    <label className="pr-2" htmlFor="name">Name: </label>
                     <input onChange={handleFilterChange} className="p-2 border-1 rounded w-full" type="text" name="name" placeholder="Search by name..." />
                 </div>
 
@@ -90,10 +101,11 @@ export default function Filters({onFilterChange}) {
                 </div>
 
                 <div>
-                    <select>
-                        <option>20</option>
-                        <option>50</option>
-                        <option>100</option>
+                    <label>Results Per Page: </label>
+                    <select className="border-1 p-2 rounded" name="limit" onChange={handleIntergerValue}>
+                        <option value="20" defaultValue>20</option>
+                        <option value="50">50</option>
+                        {/* <option value="100">100</option> */}
                     </select>
                 </div>
 

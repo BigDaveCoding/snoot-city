@@ -26,7 +26,8 @@ function App() {
     good_with_dogs : false,
     good_with_cats : false,
     good_with_children : false,
-    name : "" 
+    name : "",
+    limit : 20 
   });
 
   const [showFilters, setShowFilters] = useState(false)
