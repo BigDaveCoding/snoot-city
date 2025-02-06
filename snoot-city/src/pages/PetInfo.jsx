@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPaw, faArrowRight, faArrowLeft, faBone, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons"
 import GetAuthToken from "../utilities/GetAuthToken"
 import PetInfoAge from "../components/PetInfoAge";
+import PetInfoBreed from "../components/PetInfoBreed";
 
 
 
@@ -17,6 +18,7 @@ export default function PetInfo() {
     const [photos, setPhotos] = useState([])
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
     const [age, setAge] = useState("")
+    const [breed, setBreed] = useState([])
     const [attributes, setAttributes] = useState([])
     const [environment, setEnvironment] = useState([])
     const [tags, setTags] = useState([])
@@ -39,6 +41,7 @@ export default function PetInfo() {
             setName(data.animal.name)
             setPhotos(data.animal.photos)
             setAge(data.animal.age)
+            setBreed(data.animal.breeds)
             setAttributes(data.animal.attributes)
             setEnvironment(data.animal.environment)
             setTags(data.animal.tags)
@@ -89,6 +92,10 @@ export default function PetInfo() {
 
                 <div>
                     <PetInfoAge age={age} className="text-3xl text-center text-secondary-color" />
+                </div>
+
+                <div>
+                    <PetInfoBreed breed={breed} className="text-xl" />
                 </div>
 
                 <div className="grid grid-cols-2">
