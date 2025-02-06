@@ -5,10 +5,6 @@ import { Link, useParams } from "react-router-dom";
 
 export default function PetCard({data}) {
 
-    // console.log(data)
-
-    // let {id} = useParams()
-
     const id = data.id
 
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)

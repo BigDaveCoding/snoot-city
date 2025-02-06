@@ -3,6 +3,7 @@ import Homepage from "./pages/Homepage";
 import { StrictMode } from "react";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
+import PetInfo from "./pages/PetInfo"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/petinfo/:id" element={<PetInfo />} />
         </Routes>
       </BrowserRouter>
     </StrictMode>
