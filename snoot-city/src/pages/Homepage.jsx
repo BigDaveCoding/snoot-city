@@ -56,6 +56,12 @@ function Homepage() {
     setShowFilters(!showFilters)
   }
 
+  useEffect(() => {
+    if (!searchData) {
+      handleSearch();
+    }
+  }, [searchData]);
+
   return (
     <>
       {/* <Header /> */}
