@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import PetList from '../components/PetList'
@@ -14,8 +14,12 @@ import PaginationInfo from '../components/PaginationInfo'
 
 function Homepage() {
 
-  const [searchData, setSearchData] = useState(null)
-  const [pagination, setPagination] = useState(null)
+  // const [searchData, setSearchData] = useState(null)
+  // const [pagination, setPagination] = useState(null)
+
+  const searchDataRef = useRef(null)
+  const paginationRef = useRef(null)
+
   const [loading, setLoading] = useState(false)
   
   const [filters, setFilters] = useState({ 
@@ -32,23 +36,31 @@ function Homepage() {
   const [showFilters, setShowFilters] = useState(false)
 
   // console.log(filters)
-  console.log(searchData)
+  console.log(searchDataRef)
 
   const handleSearch = async () => {
     console.log("handleSearch")
     setLoading(true)
     const data = await GetSighthounds(filters)
     console.log(data.animals)
-    setSearchData(data.animals)
-    setPagination(data)
+    // setSearchData(data.animals)
+    // setPagination(data)
+
+    searchDataRef.current = data.animals;
+    paginationRef.current = data;
+
     setLoading(false)
   }
 
   const handleNextPrevPage = (data) => {
     console.log(data)
     setLoading(true)
-    setSearchData(data.animals)
-    setPagination(data)
+    // setSearchData(data.animals)
+    // setPagination(data)
+
+    searchDataRef.current = data.animals;
+    paginationRef.current = data;
+
     setLoading(false)
   }
 
@@ -58,10 +70,11 @@ function Homepage() {
   }
 
   useEffect(() => {
-    if (!searchData) {
+    // Only call the API if no data is present in useRef
+    if (!searchDataRef.current) {
       handleSearch();
     }
-  }, [searchData]);
+  }, []);
 
   return (
     <>
@@ -83,11 +96,11 @@ function Homepage() {
 
         {showFilters && <Filters onFilterChange={setFilters} onSearch={handleSearch} />}
 
-        {!loading && pagination && <PaginationInfo data={pagination}/>}
+        {!loading && paginationRef.current && <PaginationInfo data={paginationRef.current}/>}
 
-        {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
+        {!loading && paginationRef.current && <NextButton data={paginationRef.current} onNext={handleNextPrevPage} loading={setLoading} /> }
 
-        {!loading && searchData && <PetList data={searchData} />}
+        {!loading && searchDataRef.current && <PetList data={searchDataRef.current} />}
 
         {loading && <p className="text-center">Loading Snoots!</p>}
 
