@@ -32,7 +32,7 @@ function Homepage() {
   const [showFilters, setShowFilters] = useState(false)
 
   // console.log(filters)
-  console.log(searchData)
+  // console.log(searchData)
 
   const handleSearch = async () => {
     console.log("handleSearch")
