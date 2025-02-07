@@ -39,8 +39,13 @@ function Homepage() {
     setLoading(true)
     const data = await GetSighthounds(filters)
     console.log(data.animals)
+
     setSearchData(data.animals)
     setPagination(data)
+
+    sessionStorage.setItem("searchData", JSON.stringify(data.animals));
+    sessionStorage.setItem("pagination", JSON.stringify(data));
+
     setLoading(false)
   }
 
@@ -49,6 +54,10 @@ function Homepage() {
     setLoading(true)
     setSearchData(data.animals)
     setPagination(data)
+
+    sessionStorage.setItem("searchData", JSON.stringify(data.animals));
+    sessionStorage.setItem("pagination", JSON.stringify(data));
+
     setLoading(false)
   }
 
@@ -58,10 +67,17 @@ function Homepage() {
   }
 
   useEffect(() => {
-    if (!searchData) {
-      handleSearch();
+    const savedSearchData = sessionStorage.getItem("searchData");
+    const savedPagination = sessionStorage.getItem("pagination");
+
+    if (savedSearchData && savedPagination) {
+      // If data is found in sessionStorage, use it to populate state
+      setSearchData(JSON.parse(savedSearchData));
+      setPagination(JSON.parse(savedPagination));
+    } else {
+      handleSearch(); // If no data, make an API request
     }
-  }, [searchData]);
+  }, []);
 
   return (
     <>
