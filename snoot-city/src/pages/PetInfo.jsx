@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPaw, faArrowRight, faArrowLeft, faBone, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons"
 import GetAuthToken from "../utilities/GetAuthToken"
@@ -167,6 +167,10 @@ export default function PetInfo() {
                                 )
                             })}
                         </div>}
+
+                        <div className="py-4">
+                            <Link to="/" className="bg-secondary-color p-2 rounded-2xl text-background-primary">Return To Snoots</Link>
+                        </div>
 
                     </div>
                 }
