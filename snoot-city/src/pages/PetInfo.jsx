@@ -96,7 +96,7 @@ export default function PetInfo() {
                         <div className="flex flex-col items-center justify-center">
                 
                             <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] overflow-hidden mb-auto">
-                                {photos[0] ? <img className="object-cover w-full h-full sm:w-8/12 lg:max-w-6/12 rounded" src={photos[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
+                                {photos[0] ? <img className="object-contain w-full h-full sm:w-8/12 lg:max-w-6/12 rounded" src={photos[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                             </div>
 
                             {photos.length > 1 && <div>
@@ -136,7 +136,7 @@ export default function PetInfo() {
                         </div>
 
                         <div className="py-2 ">
-                            <p className="text-xl text-logo-font-color">I Love to Snoot it up with...</p>
+                            <p className="text-xl text-logo-font-color pb-2">I can live with...</p>
                             <div className="grid grid-cols-3">
                                 {Object.entries(environment).map(([key, value], index) => {
                                     return (
@@ -154,8 +154,8 @@ export default function PetInfo() {
                             </div>
                         </div>
 
-                        {tags.length >= 1 && <div className="grid grid-cols-2 pb-2">
-                            <p className="text-xl col-span-2 pb-2 text-secondary-color"><i>'Hoomans'</i> say that I'm...</p>
+                        {tags.length >= 1 && <div className="grid grid-cols-2 pb-2 md:grid-cols-1">
+                            <p className="text-xl col-span-2 pb-2 text-secondary-color md:col-span-1"><i>'Hoomans'</i> say that I'm...</p>
                             {tags.map((tag, index) => {
                                 return (
                                     <div key={index} className="flex items-center gap-4">
