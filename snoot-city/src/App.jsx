@@ -10,13 +10,17 @@ function App() {
   return (
     <StrictMode>
       <BrowserRouter>
-        <NavBar />
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/petinfo/:id" element={<PetInfo />} />
-          </Routes>
-        <Footer />
+        <div className="bg-background-primary">
+          <div className="flex flex-col mx-auto max-w-[1280px]">
+            <NavBar />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/petinfo/:id" element={<PetInfo />} />
+              </Routes>
+            <Footer />
+          </div>
+        </div>
       </BrowserRouter>
     </StrictMode>
   );

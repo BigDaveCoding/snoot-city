@@ -84,7 +84,7 @@ export default function PetInfo() {
 
     return (
         <>
-            <div className="bg-background-primary min-h-[90dvh] px-2 font-baloo">
+            <div className="bg-background-primary min-h-[88dvh] px-2 font-baloo">
 
                 {loading && <p className="text-xl py-10">Loading Snoot Info! Might take a second...</p>}
 
