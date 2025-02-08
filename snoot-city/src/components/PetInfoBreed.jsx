@@ -6,7 +6,7 @@ export default function PetInfoBreed({breed, className}) {
 
     return (
         <>
-            {breed.mixed ?
+            {breed.mixed && breed.secondary !== null ?
                 <p className={className}>Breed: {breed.primary} / {breed.secondary}</p> 
                 : 
                 <p className={className}>Breed: {breed.primary}</p>
