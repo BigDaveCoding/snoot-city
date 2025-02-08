@@ -10,13 +10,13 @@ function App() {
   return (
     <StrictMode>
       <BrowserRouter>
-      <NavBar />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/petinfo/:id" element={<PetInfo />} />
-        </Routes>
-      <Footer />
+        <NavBar />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/petinfo/:id" element={<PetInfo />} />
+          </Routes>
+        <Footer />
       </BrowserRouter>
     </StrictMode>
   );
