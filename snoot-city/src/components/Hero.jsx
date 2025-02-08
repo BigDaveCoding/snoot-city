@@ -13,7 +13,10 @@ export default function Hero(){
             <div>
                 <h2 className="text-center p-2 text-4xl text-secondary-color font-bold">FIND YOUR NEW BEST FRIEND</h2>
 
-                <img className="p-2" src="../../images/snoot_banner_frames.png" alt='' />
+                <div className="flex justify-center items-center px-2">
+                    <img className="p-2 hidden md:block w-full" src="../../images/snoot_banner_frames.png" alt='' />
+                    <img className="w-full md:hidden" src="../../images/snoot_banner_425px.png" alt="" />
+                </div>
 
                 <p className="px-6 py-4 text-2xl">Here at <strong className="text-logo-font-color">Oh My Snoot</strong>, we are passionate about giving sighthounds the love, care, and second chances they deserve.
                      </p>
