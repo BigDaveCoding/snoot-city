@@ -13,7 +13,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-function Homepage() {
+function Homepage({manualNavigation, setManualNavigation}) {
 
   const [searchData, setSearchData] = useState(null)
   const [pagination, setPagination] = useState(null)
@@ -45,16 +45,24 @@ function Homepage() {
 
   // Restore the scroll position from sessionStorage
   const restoreScrollPosition = () => {
-    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
-    if (savedScrollPosition) {
-      // console.log('Restoring scroll position to:', savedScrollPosition);
+    if(manualNavigation) {
+      console.log("manual Navigation from nav bar or logo")
+      window.scrollTo(0,0)
+      setManualNavigation(false)
+    } else{
+      const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+        if (savedScrollPosition) {
+          // console.log('Restoring scroll position to:', savedScrollPosition);
 
-      setTimeout(() => {
-        window.scrollTo(0, parseInt(savedScrollPosition, 10));
-      }, 50); 
-    } else {
-      console.log('No saved scroll position found.');
+          setTimeout(() => {
+            window.scrollTo(0, parseInt(savedScrollPosition, 10));
+          }, 50); 
+        } else {
+          console.log('No saved scroll position found.');
+        }
+
     }
+    
   };
 
   useEffect(() => {
