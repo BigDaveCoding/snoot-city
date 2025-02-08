@@ -98,13 +98,13 @@ export default function PetInfo() {
                     <PetInfoBreed breed={breed} className="text-xl" />
                 </div>
 
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 py-2 border-t-1">
 
                     {Object.entries(attributes).map(([key, value]) => {
                         return (
 
                             <div key={key}>
-                                <p className="capitalize">{key.replace("_", " ")}:
+                                <p className="capitalize text-lg">{key.replace("_", " ")}:
                                     {value === true ? 
                                         <FontAwesomeIcon icon={faCheck} className="text-secondary-color text-xl pl-2" /> 
                                         : 
@@ -115,6 +115,29 @@ export default function PetInfo() {
                         )
                     })}
                     
+                </div>
+
+                <div className="py-2 border-t-1">
+
+                    <p className="text-xl text-logo-font-color">I Love to Snoot it up with...</p>
+
+                    <div className="grid grid-cols-3">
+
+                        {Object.entries(environment).map(([key, value], index) => {
+                            return (
+                                <div key={index}>
+                                    <p className="capitalize text-lg">{key}: 
+                                        {value === true ?
+                                            <FontAwesomeIcon icon={faCheck} className="text-secondary-color text-xl pl-2" />
+                                            :
+                                            <FontAwesomeIcon icon={faXmark} className="text-logo-font-color text-xl pl-2" />
+                                        }
+                                    </p>
+                                </div>   
+                            )
+                        })}
+
+                    </div>
                 </div>
 
 
