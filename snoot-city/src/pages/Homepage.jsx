@@ -107,6 +107,10 @@ function Homepage() {
 
         {loading && <p className="text-center">Loading Snoots!</p>}
 
+        {!loading && pagination && <PaginationInfo data={pagination}/>}
+
+        {!loading && pagination && <NextButton data={pagination} onNext={handleNextPrevPage} loading={setLoading} /> }
+
       </div>
       
     </>
