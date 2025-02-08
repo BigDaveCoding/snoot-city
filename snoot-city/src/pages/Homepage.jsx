@@ -36,18 +36,18 @@ function Homepage() {
   // console.log(searchData)
 
   const location = useLocation();
-  console.log(location)
+  // console.log(location)
 
   const saveScrollPos = () => {
     sessionStorage.setItem("scrollPosition", window.scrollY);
-    console.log("session storage", sessionStorage.getItem("scrollPosition"));
+    // console.log("session storage", sessionStorage.getItem("scrollPosition"));
   };
 
   // Restore the scroll position from sessionStorage
   const restoreScrollPosition = () => {
     const savedScrollPosition = sessionStorage.getItem('scrollPosition');
     if (savedScrollPosition) {
-      console.log('Restoring scroll position to:', savedScrollPosition);
+      // console.log('Restoring scroll position to:', savedScrollPosition);
 
       setTimeout(() => {
         window.scrollTo(0, parseInt(savedScrollPosition, 10));
