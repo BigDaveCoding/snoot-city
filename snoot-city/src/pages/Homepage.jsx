@@ -121,13 +121,13 @@ function Homepage() {
         
         <Hero />
 
-        <SearchPets onSearch={handleSearch} className="text-background-primary uppercase bg-logo-font-color font-medium text-xl p-2 ml-2 rounded-3xl w-8/12 md:w-5/12" />
+        <SearchPets onSearch={handleSearch} className="text-background-primary uppercase bg-logo-font-color font-medium text-xl p-2 ml-2 rounded-3xl w-8/12 md:w-5/12 cursor-pointer" />
 
         <div className="flex py-4">
           {!showFilters ?
-            <button className="underline underline-offset-4 font-medium text-xl p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
+            <button className="underline underline-offset-4 font-medium text-xl p-2 ml-2 rounded w-48 cursor-pointer" onClick={handleShowFilters}>Show Filters <FontAwesomeIcon icon={faChevronDown} /></button>
             :
-            <button className="underline underline-offset-4 font-medium text-xl p-2 ml-2 rounded w-48" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
+            <button className="underline underline-offset-4 font-medium text-xl p-2 ml-2 rounded w-48 cursor-pointer" onClick={handleShowFilters}>Hide Filters <FontAwesomeIcon icon={faChevronUp} /></button>
           }
         </div>
 

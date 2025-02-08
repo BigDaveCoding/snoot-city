@@ -122,8 +122,8 @@ export default function Filters({onFilterChange, onSearch}) {
                 </div>
 
                 <div className="grid grid-cols-[2fr_1fr] bg-background-primary">
-                    <SearchPets onSearch={onSearch} className="text-background-primary uppercase bg-logo-font-color p-2 ml-2 rounded-3xl w-8/12" />
-                    <button onClick={handleResetFilters} className="justify-self-end border-1 p-2 rounded-3xl text-sm bg-secondary-color text-background-primary w-10/12">Reset</button>
+                    <SearchPets onSearch={onSearch} className="text-background-primary uppercase bg-logo-font-color p-2 ml-2 rounded-3xl w-8/12 cursor-pointer" />
+                    <button onClick={handleResetFilters} className="justify-self-end border-1 p-2 rounded-3xl text-sm bg-secondary-color text-background-primary w-10/12 cursor-pointer">Reset</button>
                     
                 </div>
 

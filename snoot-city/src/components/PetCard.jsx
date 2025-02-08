@@ -41,12 +41,12 @@ export default function PetCard({data}) {
                 <div className="flex flex-col items-center justify-center flex-grow">
                     
                     <div className="flex justify-center items-center w-full h-[400px] md:h-[500px] overflow-hidden mb-auto">
-                        {data.photos[0] ? <img className="object-cover w-full h-full" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
+                        {data.photos[0] ? <img className="object-cover w-full h-full rounded" src={photo_array[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                     </div>
 
                     {photo_array.length > 1 && <div>
-                        <button onClick={handlePrevPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 my-2"><FontAwesomeIcon icon={faArrowLeft} /></button>
-                        <button onClick={handleNextPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 my-2"><FontAwesomeIcon icon={faArrowRight} /></button>
+                        <button onClick={handlePrevPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 mt-4 cursor-pointer"><FontAwesomeIcon icon={faArrowLeft} /></button>
+                        <button onClick={handleNextPhoto} className="bg-logo-font-color text-background-primary text-2xl rounded-[50%] w-14 h-14 mx-6 mt-4 cursor-pointer"><FontAwesomeIcon icon={faArrowRight} /></button>
                     </div>}
 
                 </div>
