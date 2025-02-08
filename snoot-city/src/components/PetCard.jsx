@@ -36,7 +36,7 @@ export default function PetCard({data}) {
     return (
         <>
             
-            <div className="flex flex-col rounded-lg p-4 bg-secondary-color/30 lg:pt-8 h-full">
+            <div className="flex flex-col rounded-lg p-4 bg-secondary-color/30 lg:pt-8 h-full sm:w-8/12 lg:w-11/12 justify-self-center">
 
                 <div className="flex flex-col items-center justify-center flex-grow">
                     
