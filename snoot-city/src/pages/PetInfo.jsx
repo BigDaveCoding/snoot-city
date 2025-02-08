@@ -19,6 +19,7 @@ export default function PetInfo() {
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
     const [age, setAge] = useState("")
     const [breed, setBreed] = useState([])
+    const [gender, setGender] = useState([])
     const [attributes, setAttributes] = useState([])
     const [environment, setEnvironment] = useState([])
     const [tags, setTags] = useState([])
@@ -42,6 +43,7 @@ export default function PetInfo() {
             setPhotos(data.animal.photos)
             setAge(data.animal.age)
             setBreed(data.animal.breeds)
+            setGender(data.animal.gender)
             setAttributes(data.animal.attributes)
             setEnvironment(data.animal.environment)
             setTags(data.animal.tags)
@@ -91,14 +93,18 @@ export default function PetInfo() {
                 </div>
 
                 <div>
-                    <PetInfoAge age={age} className="text-3xl text-center text-secondary-color" />
+                    <PetInfoAge age={age} className="text-3xl text-center text-secondary-color py-2" />
                 </div>
 
                 <div>
-                    <PetInfoBreed breed={breed} className="text-xl" />
+                    <PetInfoBreed breed={breed} className="text-xl py-2" />
                 </div>
 
-                <div className="grid grid-cols-2 py-2 border-t-1">
+                <div>
+                    {gender && <p className="text-xl py-2">Gender: {gender}</p>}
+                </div>
+
+                <div className="grid grid-cols-2 py-2">
 
                     {Object.entries(attributes).map(([key, value]) => {
                         return (
@@ -117,7 +123,7 @@ export default function PetInfo() {
                     
                 </div>
 
-                <div className="py-2 border-t-1">
+                <div className="py-2 ">
 
                     <p className="text-xl text-logo-font-color">I Love to Snoot it up with...</p>
 
