@@ -116,11 +116,11 @@ export default function PetInfo() {
                             {gender && <p className="text-xl py-2">Gender: {gender}</p>}
                         </div>
 
-                        <div className="grid grid-cols-2 py-2">
+                        <div className="grid grid-cols-1 text-lg gap-2 py-2 md:grid-cols-3 border-y-2 border-secondary-color">
                             {Object.entries(attributes).map(([key, value]) => {
                                 return (
                                     <div key={key}>
-                                        <p className="capitalize text-lg">{key.replace("_", " ")}:
+                                        <p className="capitalize text-md sm:text-lg">{key.replace("_", " ")}:
                                             {value === true ?
                                                 <FontAwesomeIcon icon={faCheck} className="text-secondary-color text-xl pl-2" />
                                                 :
@@ -152,9 +152,25 @@ export default function PetInfo() {
                             </div>
                         </div>
 
+                        <div className="grid grid-cols-2 pb-2">
+                            <p className="text-xl col-span-2 pb-2 text-secondary-color"><i>'Hoomans'</i> say that I'm...</p>
+                            {tags.length >= 1 && tags.map((tag, index) => {
+                                return (
+                                    <div key={index} className="flex items-center gap-4">
+                                        {index % 2 === 0 ? 
+                                            <FontAwesomeIcon className="text-logo-font-color" icon={faBone} />
+                                            :
+                                            <FontAwesomeIcon className="text-secondary-color" icon={faBone} />
+                                        }
+                                        <p className="text-lg"> {tag}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
                     </div>
                 }
-                
+
             </div>
 
         </>
