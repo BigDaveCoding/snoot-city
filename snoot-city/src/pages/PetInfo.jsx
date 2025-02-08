@@ -93,8 +93,8 @@ export default function PetInfo() {
 
                         <div className="flex flex-col items-center justify-center">
                 
-                            <div className="flex justify-center items-center w-full h-[400px] overflow-hidden mb-auto">
-                                {photos[0] ? <img className="object-cover w-full h-full" src={photos[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
+                            <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] overflow-hidden mb-auto">
+                                {photos[0] ? <img className="object-cover w-full h-full sm:w-8/12" src={photos[currentPhotoIndex].full} alt='' /> : <p className="text-red-600 text-2xl">No Image</p>}
                             </div>
 
                             {photos.length > 1 && <div>
