@@ -36,7 +36,9 @@ export default function NavBar({setManualNavigation}) {
         <>
             <div className="grid grid-cols-2 bg-background-primary border-b-1 max-h-[8dvh] min-h-[8dvh] items-center z-50">
                 <div>
-                    <Link onClick={() => {setManualNavigation(true)}} to="/"><img className="px-4 w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-3/12" src="../../images/snoot_logo_small_two.png" alt='' /></Link>
+                    <Link onClick={() => {setManualNavigation(true), navMenuOpen && handleNavMenuOpenClose()}} to="/">
+                        <img className="px-4 w-10/12 sm:w-8/12 md:w-6/12 lg:w-5/12 xl:w-3/12" src="../../images/snoot_logo_small_two.png" alt='' />
+                    </Link>
                 </div>
                 <div className="flex justify-end">
                     {!navMenuOpen && <FontAwesomeIcon onClick={handleNavMenuOpenClose} icon={faBars} className="justify-self-end self-center px-4 text-2xl cursor-pointer" />}
