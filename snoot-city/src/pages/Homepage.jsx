@@ -9,6 +9,7 @@ import Hero from '../components/Hero'
 import Header from '../components/Header'
 import Filters from '../components/Filters'
 import PaginationInfo from '../components/PaginationInfo'
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -33,6 +34,39 @@ function Homepage() {
 
   // console.log(filters)
   // console.log(searchData)
+
+  const location = useLocation();
+  console.log(location)
+
+  const saveScrollPos = () => {
+    sessionStorage.setItem("scrollPosition", window.scrollY);
+    console.log("session storage", sessionStorage.getItem("scrollPosition"));
+  };
+
+  // Restore the scroll position from sessionStorage
+  const restoreScrollPosition = () => {
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+      console.log('Restoring scroll position to:', savedScrollPosition);
+
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition, 10));
+      }, 50); 
+    } else {
+      console.log('No saved scroll position found.');
+    }
+  };
+
+  useEffect(() => {
+    restoreScrollPosition();
+
+    window.addEventListener('scroll', saveScrollPos);
+
+    return () => {
+      window.removeEventListener('scroll', saveScrollPos);
+    };
+  }, [location]); // Runs when location changes
+
 
   const handleSearch = async () => {
     console.log("handleSearch")
