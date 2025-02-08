@@ -18,7 +18,7 @@ export default function Hero(){
                     <img className="w-full md:hidden" src="../../images/snoot_banner_425px.png" alt="" />
                 </div>
 
-                <p className="px-6 py-4 text-2xl">Here at <strong className="text-logo-font-color">Oh My Snoot</strong>, we are passionate about giving sighthounds the love, care, and second chances they deserve.
+                <p className="text-center px-4 py-4 text-2xl">Here at <strong className="text-logo-font-color">Oh My Snoot</strong>, we are passionate about giving sighthounds the love, care, and second chances they deserve.
                      </p>
             </div>
         </>
