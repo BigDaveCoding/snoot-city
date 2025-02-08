@@ -27,6 +27,8 @@ export default function PetInfo() {
     const [tags, setTags] = useState([])
 
     useEffect(() => {
+
+        window.scrollTo(0,0)
         
         async function fetchData(){
             setLoading(true)
