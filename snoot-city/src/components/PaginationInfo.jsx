@@ -6,7 +6,7 @@ export default function PaginationInfo({data}) {
 
     return (
         <>
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center pb-4 text-lg">
                 <p>Snoots Found: {data.pagination.total_count}</p>
                 <div className="flex gap-4">
                     <p>Current Page: {data.pagination.current_page}</p>

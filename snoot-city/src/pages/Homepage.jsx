@@ -87,7 +87,7 @@ function Homepage() {
         
         <Hero />
 
-        <SearchPets onSearch={handleSearch} className="text-background-primary uppercase bg-logo-font-color font-medium text-xl p-2 ml-2 rounded-3xl w-8/12" />
+        <SearchPets onSearch={handleSearch} className="text-background-primary uppercase bg-logo-font-color font-medium text-xl p-2 ml-2 rounded-3xl w-8/12 md:w-5/12" />
 
         <div className="flex py-4">
           {!showFilters ?

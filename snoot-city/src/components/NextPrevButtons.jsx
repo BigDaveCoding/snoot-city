@@ -56,12 +56,12 @@ export default function NextButton({data, onNext, loading}) {
     return (
         <>
             <div className="grid grid-cols-2 py-2">
-                <button onClick={handlePrev} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 ">
+                <button onClick={handlePrev} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 md:w-6/12">
                     <FontAwesomeIcon icon={faArrowLeft} className="pr-2" />
                     Previous
                 </button>
 
-                <button onClick={handleNext} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 ">
+                <button onClick={handleNext} className="justify-self-center text-background-primary uppercase bg-secondary-color font-medium text p-2 ml-2 rounded-3xl w-8/12 md:w-6/12">
                     Next 
                     <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
                 </button>
