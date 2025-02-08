@@ -4,6 +4,7 @@ import { StrictMode } from "react";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import PetInfo from "./pages/PetInfo"
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/petinfo/:id" element={<PetInfo />} />
         </Routes>
+      <Footer />
       </BrowserRouter>
     </StrictMode>
   );
