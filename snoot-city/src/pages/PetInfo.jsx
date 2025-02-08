@@ -152,9 +152,9 @@ export default function PetInfo() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-2 pb-2">
+                        {tags.length >= 1 && <div className="grid grid-cols-2 pb-2">
                             <p className="text-xl col-span-2 pb-2 text-secondary-color"><i>'Hoomans'</i> say that I'm...</p>
-                            {tags.length >= 1 && tags.map((tag, index) => {
+                            {tags.map((tag, index) => {
                                 return (
                                     <div key={index} className="flex items-center gap-4">
                                         {index % 2 === 0 ? 
@@ -166,7 +166,7 @@ export default function PetInfo() {
                                     </div>
                                 )
                             })}
-                        </div>
+                        </div>}
 
                     </div>
                 }
