@@ -49,6 +49,8 @@ export default function NavBar() {
                 <div className="flex flex-col">
                     <Link onClick={handleNavMenuOpenClose} className="w-full border-b-2 border-logo-font-color text-right py-2 pr-3 text-2xl" to="/" >Home</Link>
                     <Link onClick={handleNavMenuOpenClose} className="w-full border-b-2 border-secondary-color text-right py-2 pr-3 text-2xl" to="/about" >About</Link>
+                    <Link onClick={handleNavMenuOpenClose} className="w-full border-b-2 border-logo-font-color text-right py-2 pr-3 text-2xl" to="/contact" >Contact</Link>
+
                 </div>
             </div>
             

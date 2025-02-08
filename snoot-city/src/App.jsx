@@ -5,6 +5,7 @@ import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import PetInfo from "./pages/PetInfo"
 import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/" element={<Homepage />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/petinfo/:id" element={<PetInfo />} />
+                <Route path="/contact" element={<Contact />} />
               </Routes>
             <Footer />
           </div>
