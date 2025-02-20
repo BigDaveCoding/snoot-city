@@ -1,9 +1,28 @@
-import { useRef } from "react"
+import gsap from "gsap"
+import { useEffect, useRef } from "react"
 
 
 export default function About() {
 
-    pawprintDivRef = useRef(null)
+    const pawprintDivRef = useRef(null)
+
+    useEffect(() => {
+        const timeline = gsap.timeline({repeat: -1})
+        timeline.fromTo(pawprintDivRef.current, {
+            x: "0"
+        }, {
+            x: "100%",
+            duration: 3,
+            ease: "linear",
+        });
+        timeline.fromTo(pawprintDivRef.current, {
+            x: "-100%"
+        }, {
+            x: "0",
+            duration: 3,
+            ease: "linear",
+        });
+    }, [])
 
 
     return(
@@ -27,7 +46,7 @@ export default function About() {
             <strong> loving forever homes</strong> while spreading awareness about their unique needs and lovable personalities.</p>
 
             <div className="relative">
-                <div ref={pawprintDivRef} className="absolute bg-background-primary w-full h-full z-50"></div>
+                <div ref={pawprintDivRef} className="absolute bg-background-primary w-full h-full "></div>
                 <img src="../../images/pawprints.png" alt='' />
             </div>
 
