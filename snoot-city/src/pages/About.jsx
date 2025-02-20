@@ -1,5 +1,6 @@
 import gsap from "gsap"
 import { useEffect, useRef } from "react"
+import AboutCard from "../components/AboutCard"
 
 
 export default function About() {
@@ -57,6 +58,15 @@ export default function About() {
                 <p className="text-xl p-2 text-center">Sighthounds are known for their speed, grace, and gentle demeanor.
                     <br />Many retired racing Greyhounds and rescued sighthounds need a <strong>second chance at life</strong>,
                     and <span className="text-logo-font-color font-medium">Oh My SNOOT</span> is here to help match them with the perfect adopters.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <AboutCard
+                    bgImageSrc="../../images/lurcher_photo_one.jpg"
+                    title="Learn About Sighthounds"
+                    linkText="Find Out More"
+                    linkRoute="/about/learnaboutsighthounds"
+                />
             </div>
 
             {/* <div className="flex justify-center items-center w-full p-4 bg-secondary-color/30">
