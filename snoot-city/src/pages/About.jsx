@@ -33,22 +33,24 @@ export default function About() {
             </div>
             
 
-            <p className="text-xl text-center pb-2"><strong className="text-logo-font-color">Oh My SNOOT </strong>
-            is a dedicated platform for sighthound lovers and those looking to adopt these 
-                 <strong> elegant</strong>, <strong>affectionate</strong>, and <strong>quirky</strong> companions.
-            </p>
-
-            <div className="p-2">
-                <img src="../../images/stencil-snoot-bowl.png" alt='' />
+            <div className="flex justify-center items-center">
+                <p className="text-xl text-center pb-2 lg:w-8/12"><strong className="text-logo-font-color">Oh My SNOOT </strong>
+                is a dedicated platform for sighthound lovers and those looking to adopt these
+                     <strong> elegant</strong>, <strong>affectionate</strong>, and <strong>quirky</strong> companions.
+                </p>
             </div>
 
-            <div>
+            <div className="flex justify-center items-center p-2">
+                <img className="lg:w-[600px]" src="../../images/stencil-snoot-bowl.png" alt='' />
+            </div>
+
+            <div className="flex flex-col lg:w-8/12 mx-auto justify-center items-center">
                 <h2 className="text-5xl text-center pt-2 text-secondary-color">Our Mission</h2>
                 <p className="text-xl text-center pt-2"><strong>Our mission</strong> is to connect rescued sighthounds with
                 <strong> loving forever homes</strong> while spreading awareness about their unique needs and <strong>lovable personalities</strong>.</p>
             </div>
 
-            <div className="relative">
+            <div className="relative lg:w-10/12 mx-auto">
                 <div ref={pawprintDivRef} className="absolute bg-background-primary w-full h-full "></div>
                 <img className="px-2" src="../../images/pawprints.png" alt='' />
             </div>

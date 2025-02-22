@@ -4,10 +4,10 @@ export default function AboutCard({bgImageSrc = "", title = "", linkText = "", l
 
     return (
         <>
-            <div className="relative flex flex-col h-[300px] w-full border-6 border-logo-font-color/50">
+            <div className="relative flex flex-col h-[300px] w-full border-8 border-logo-font-color/50 rounded">
                 <img className="absolute object cover h-full w-full " src={bgImageSrc} alt='' />
                 {/* overlay */}
-                <div className="absolute bg-black/20 w-full h-full"></div>
+                <div className="absolute bg-black/20 w-full h-full "></div>
 
                 <div className="w-full h-full flex flex-col justify-between items-center py-4 z-10">
                     <h4 className="text-2xl text-center mx-4 text-white bg-logo-font-color/50 rounded-2xl p-2 mb-4">{title}</h4>
