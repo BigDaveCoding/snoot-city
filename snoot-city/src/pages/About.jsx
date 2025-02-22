@@ -53,19 +53,52 @@ export default function About() {
                 <img className="px-2" src="../../images/pawprints.png" alt='' />
             </div>
 
-            <div className="bg-logo-font-color/10 border-7 border-secondary-color/20 rounded">
+            {/* <div className="bg-logo-font-color/10 border-7 border-secondary-color/20 rounded">
                 <h2 className="text-4xl text-center p-2 underline underline-offset-4 text-logo-font-color">Why Sighthounds?!</h2>
                 <p className="text-xl p-2 text-center">Sighthounds are known for their speed, grace, and gentle demeanor.
                     <br />Many retired racing Greyhounds and rescued sighthounds need a <strong>second chance at life</strong>,
                     and <span className="text-logo-font-color font-medium">Oh My SNOOT</span> is here to help match them with the perfect adopters.</p>
-            </div>
+            </div> */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 p-4
+             md:grid-cols-2 
+             lg:grid-cols-3"
+            >
                 <AboutCard
                     bgImageSrc="../../images/lurcher_photo_one.jpg"
                     title="Learn About Sighthounds"
                     linkText="Find Out More"
                     linkRoute="/about/learnaboutsighthounds"
+                />
+                <AboutCard
+                    bgImageSrc="../../images/contact-us-paw.jpg"
+                    title="Contact Us"
+                    linkText="Our Details"
+                    linkRoute="/"
+                />
+                <AboutCard
+                    bgImageSrc="../../images/walk-inspire.jpg"
+                    title="Stories"
+                    linkText="Inspirational Tales"
+                    linkRoute="/"
+                />
+                <AboutCard
+                    bgImageSrc="../../images/newsletter-image.jpg"
+                    title="Newsletter"
+                    linkText="Sign Up Today!"
+                    linkRoute="/"
+                />
+                <AboutCard
+                    bgImageSrc="../../images/dogs-playing.jpg"
+                    title="In The Community"
+                    linkText="What We Do"
+                    linkRoute="/"
+                />
+                <AboutCard
+                    bgImageSrc="../../images/team-hands.jpg"
+                    title="Meet The Team"
+                    linkText="Take A Look"
+                    linkRoute="/"
                 />
             </div>
 
